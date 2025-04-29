@@ -1,0 +1,85 @@
+# @format
+
+name: Bug Report
+description: Create a report to help us reproduce and fix the issue
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before submitting a bug, please make sure the issue hasn't been already addressed by searching through the [FAQs](https://ai.meta.com/llama/faq/) and [existing/past issues](https://github.com/facebookresearch/llama/issues)**
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: Please provide a clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal Reproducible Example
+      description: Please include a minimal code snippet to reproduce the bug. Ensure relevant imports are included.
+      placeholder: |
+        ```python
+        # sample code to repro the bug
+        ```
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output / Stack Trace
+      description: Paste the full stack trace and any relevant output.
+      placeholder: |
+        ```
+        <paste stacktrace and other outputs here>
+        ```
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      placeholder: "e.g., llama-2-7b-chat"
+    validations:
+      required: true
+  - type: dropdown
+    id: huggingface
+    attributes:
+      label: Using via Hugging Face?
+      options:
+        - "yes"
+        - "no"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: "e.g., Linux/Ubuntu, Windows 11"
+    validations:
+      required: true
+  - type: input
+    id: gpu-vram
+    attributes:
+      label: GPU VRAM
+      placeholder: "e.g., 80GB"
+  - type: input
+    id: gpu-count
+    attributes:
+      label: Number of GPUs
+      placeholder: "e.g., 1, 8"
+  - type: input
+    id: gpu-make
+    attributes:
+      label: GPU Make
+      placeholder: "e.g., Nvidia, AMD"
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem or environment here.
